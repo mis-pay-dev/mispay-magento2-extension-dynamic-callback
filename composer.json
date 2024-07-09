@@ -1,0 +1,38 @@
+{
+    "name": "mispay/mispay-magento2-payment-method-dynamic-callback",
+    "description": "MIS Pay Magento2 Payment Module with dynamic callback feature",
+    "type": "magento2-module",
+    "version": "1.1.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MIS Pay",
+            "email": "contact@mispay.co",
+            "homepage": "https://www.mispay.co"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MISPay\\MISPayMethodDynamicCallback\\": ""
+        }
+    },
+    "require": {
+        "php": "^7.4"
+    },
+    "keywords": [
+        "mispay",
+        "API",
+        "Credit card",
+        "eCommerce",
+        "Magento",
+        "Magento 2",
+        "Magento extension",
+        "Payment",
+        "Payment authorization",
+        "Payment integration",
+        "Payment gateway"
+    ]
+}

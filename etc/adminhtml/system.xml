@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="mispaymethod_dynamic_callback" translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="1">
+                <label>MIS Pay Integration (Dynamic Callback)</label>
+                <fieldset_css>complex mispay-dynamic-callback-section</fieldset_css>
+                <frontend_model>MISPay\MISPayMethodDynamicCallback\Block\Adminhtml\System\Config\Fieldset\Payment</frontend_model>
+                <comment>Integrate MIS Pay to your store to be able to receive payment securely.</comment>
+                <attribute type="activity_path">payment/mispaymethod/active</attribute>
+                <attribute type="displayIn">recommended_solutions</attribute>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Payment Area Title</label>
+                    <frontend_class>required-entry</frontend_class>
+                </field>
+                <field id="description" translate="label" type="text" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Payment Option Description</label>
+                    <frontend_class>required-entry</frontend_class>
+                </field>
+                <field id="merchant_app_id" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Merchant App ID</label>
+                    <comment>x-app-id</comment>
+                    <frontend_class>required-entry</frontend_class>
+                </field>
+                <field id="merchant_app_secret" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Merchant App Secret</label>
+                    <comment>x-app-secret</comment>
+                    <frontend_class>required-entry</frontend_class>
+                </field>
+                <field id="mispay_logo" translate="label" type="select" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show MIS Pay Logo?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="min_order_total" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Minimum Order Total</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="max_order_total" translate="label" type="text" sortOrder="131" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Maximum Order Total</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="order_status" translate="label" type="select" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>New Order Status</label>
+                    <config_path>payment/mispaymethod_dynamic_callback/order_status</config_path>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                </field>
+                <field id="is_widget_enabled" translate="label" type="select" sortOrder="180" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Is Widget Enabled?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="widget_access_key" translate="label" type="text" sortOrder="190" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Widget Access Code</label>
+                    <frontend_class>required-entry</frontend_class>
+                </field>
+                <field id="min_widget_limit" translate="label" type="text" sortOrder="182" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Minimum Amount Limit for Widget Visibility</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="max_widget_limit" translate="label" type="text" sortOrder="183" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Maximum Amount Limit for Widget Visibility</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="callback_url_template" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Callback URL</label>
+                    <config_path>payment/mispaymethod_dynamic_callback/callback_url_template</config_path>
+                    <comment>Dont change if you re not sure</comment>
+                </field>
+                <field id="test_mode" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Test Mode</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

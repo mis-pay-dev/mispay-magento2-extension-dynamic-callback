@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Copyright © MISPay, Inc. All rights reserved.
+ */
+
+$_price = $block->getPrice();
+$_lang = $block->getLang();
+?>
+
+<?php if ($block->isVisible()) : ?>
+    <div class="">
+        <mispay-widget amount="<?php echo $_price ?>" lang="<?php echo $_lang ?>"></mispay-widget>
+    </div>
+<?php endif; ?>
