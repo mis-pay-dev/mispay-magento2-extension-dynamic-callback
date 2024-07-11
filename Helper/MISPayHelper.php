@@ -197,6 +197,14 @@ class MISPayHelper
     }
 
     /**
+     * @return mixed|string
+     */
+    public function getLogo()
+    {
+        return $this->config->getValue('payment/mispaymethod_dynamic_callback/mispay_logo', $this->getScopeInterface());
+    }
+
+    /**
      * @return mixed
      */
     public function getWidgetAccessKey()
